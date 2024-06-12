@@ -56,12 +56,12 @@
       "ReFuTe8": 0
     },
     "Fetch Function Tests": {
-      "FeFuTe1": 0,
-      "FeFuTe2": 0,
-      "FeFuTe3": 0,
-      "FeFuTe4": 0,
+      "FeFuTe1": 1,
+      "FeFuTe2": 1,
+      "FeFuTe3": 1,
+      "FeFuTe4": 1,
       "FeFuTe5": 0,
-      "FeFuTe6": 0,
+      "FeFuTe6": 1,
       "FeFuTe7": 0,
       "FeFuTe8": 0
     },
@@ -74,8 +74,8 @@
   },
   "humanReadable": {
     "Render Functions Tests": "0/8",
-    "finalTestScore": "FINAL SCORE: 0/20",
-    "Fetch Function Tests": "0/8",
+    "finalTestScore": "FINAL SCORE: 5/20",
+    "Fetch Function Tests": "5/8",
     "App Tests": "0/4"
   }
 }
