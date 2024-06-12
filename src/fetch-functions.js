@@ -27,13 +27,16 @@ export const getUsers = () => {
 };
 
 export const getUserPosts = (userId, maxNumPosts = 3) => {
-    return fetch('https://jsonplaceholder.typicode.com/users/{userId}/posts').then((response) => {
+    return fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`).then((response) => {
         // console.log(response.ok)
         console.log(response.url)
         return response.json().then((posts) => {
+            const limitedPosts = []
+            for (let i = 0; i < maxNumPosts; i++) {
+                limitedPosts.push(posts[i])
+            }
             // console.log(posts)
-            const userPosts = posts.filter((post) => post.userId === userId)
-            return userPosts
+            return limitedPosts
             // for (const person of posts) {
             //     if (person[id] === userId) {
             //         return person.posts
@@ -43,5 +46,29 @@ export const getUserPosts = (userId, maxNumPosts = 3) => {
     })
 }
 
-export const createNewUser = () => {
+
+const url = 'https://jsonplaceholder.typicode.com/users';
+
+export const createNewUser = (newUserData) => {
+    const postOptions = {
+        method: "POST",                      // The type of HTTP request
+        body: JSON.stringify(newUserData),       // The data to be sent to the API
+        headers: {
+            "Content-Type": "application/json" // The format of the body's data
+        }
+    }
+    return fetch(url, postOptions).then((response) => {
+        console.log(response)
+        return response.json()
+    }).then((userWhoPosted) => {
+        console.log(userWhoPosted)
+        // delete userWhoPosted.id
+        // const newUser = {
+        //     username: userWhoPosted.name,
+        //     email: userWhoPosted.email,
+        // }
+        // console.log(newUser)
+        // console.log(userWhoPosted)
+        return userWhoPosted
+    })
 }
