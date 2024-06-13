@@ -46,8 +46,8 @@ export const renderStatus = (statusDiv, statusInfoObj) => {
   statusDiv.append(h2, p)
 }
 
-export const renderUsers = (usersUI, users) => {
-  usersUI.textContent = ''
+export const renderUsers = (usersUl, users) => {
+  usersUl.textContent = ''
   users.forEach((user) => {
     const li = document.createElement('li')
     const button = document.createElement('button')
@@ -55,13 +55,13 @@ export const renderUsers = (usersUI, users) => {
     button.setAttribute('data-user-id', user.id)
     button.textContent = `Load ${user.username}'s posts`
     li.append(button)
-    usersUI.append(li)
+    usersUl.append(li)
 
   })
 };
 
-export const renderPosts = (postsUI, posts) => {
-  postsUI.textContent = ''
+export const renderPosts = (postsUl, posts) => {
+  postsUl.textContent = ''
   posts.forEach((post) => {
     const li = document.createElement('li')
     const h2 = document.createElement('h2')
@@ -69,7 +69,7 @@ export const renderPosts = (postsUI, posts) => {
     h2.textContent = post.title
     p.textContent = post.body
     li.append(h2, p)
-    postsUI.append(li)
+    postsUl.append(li)
 
   })
 }
